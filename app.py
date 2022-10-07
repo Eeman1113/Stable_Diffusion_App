@@ -3,10 +3,14 @@ import streamlit as st
 import os
 from authtoken import auth_token
 
-import torch
-from torch import autocast
-from diffusers import StableDiffusionPipeline
 
+from diffusers import StableDiffusionPipeline
+st.session_state.ac=True 
+if st.session_state.ac==True:
+    os.system('pip3 install torch torchvision torchaudio')
+    import torch
+    from torch import autocast  
+    st.session_state.ac=False
 
 st.title('Stable Diffusion (AI that can imagine)')
 
